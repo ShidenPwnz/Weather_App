@@ -40,6 +40,14 @@ class TestWeatherFunctions(unittest.TestCase):
         country = get_country(self.weather_data)
         self.assertEqual(country, 'United States')
 
+    def test_get_weather_data_valid_city(self):
+        city = 'New York'
+        api_key = '9bed24e805msh986358ba336fa52p107a58jsn86543b46e4c9'
+        result = get_weather_data(city, api_key)
+        self.assertNotIn('error', result)
 
+
+if __name__ == '__main__':
+    unittest.main()
 
 

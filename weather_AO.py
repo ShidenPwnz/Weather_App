@@ -21,7 +21,11 @@ def get_weather_data(city, api_key):
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
     data = json.loads(response.text)
-    return data
+    print(data)
+    if 'error' in data:
+        return data['error']
+    else:
+        return data
 
 
 def get_condition(weather_data):
