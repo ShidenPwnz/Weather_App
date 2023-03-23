@@ -21,7 +21,7 @@ def get_weather_data(city, api_key):
     }
     response = requests.request("GET", url, headers=headers, params=querystring)
     data = json.loads(response.text)
-    print(data)
+
 
     return data
 
